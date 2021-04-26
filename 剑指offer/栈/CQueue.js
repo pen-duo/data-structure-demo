@@ -19,9 +19,10 @@ CQueue.prototype.appendTail = function (value) {
 }
 
 CQueue.prototype.deleteHead = function () {
-  if (this.popStack.length) return this.popStack.pop()
-  while (this.pushStack.length) {
-    this.popStack.push(this.pushStack.pop())
+  if (this.popStack.length === 0) {
+    while (this.pushStack.length) {
+      this.popStack.push(this.pushStack.pop())
+    }
   }
   return this.popStack.pop() || -1
 }
