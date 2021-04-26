@@ -23,7 +23,7 @@ function Set() {
       return true
     }
   }
-// clear方法
+  // clear方法
   Set.prototype.clear = function () {
     this.items = {}
   }
@@ -36,20 +36,20 @@ function Set() {
     return Object.keys(this.items)
   }
 
-
+  // 并集
   Set.prototype.union = function (otherSet) {
     let unionSet = new Set()
     let values = this.values
     for (let i = 0; i < values.length; i++) {
       unionSet.add(value[i])
     }
-
     values = otherSet.values
     for (let i = 0; i < values.length; i++) {
       unionSet.add(value[i])
     }
     return unionSet;
   }
+  // 交集
   Set.prototype.intersection = function (otherSet) {
     let interSet = new Set()
 
@@ -62,6 +62,7 @@ function Set() {
     }
     return interSet
   }
+  // 差集
   Set.prototype.difference = function (otherSet) {
     let differenceSet = new Set()
     let values = this.values()
@@ -73,7 +74,7 @@ function Set() {
     }
     return differenceSet
   }
-
+  // 子集
   Set.prototype.subset = function (otherSet) {
     let values = this.values()
     for (let i = 0; i < values.length; i++) {
@@ -85,20 +86,4 @@ function Set() {
     }
   }
 
-
-  let set = new Set()
-
-  // 2. 添加元素
-  console.log(set.add('abc'));
-  console.log(set.add('abc'));
-  console.log(set.add('cba'));
-  console.log(set.add('nba'));
-  console.log(set.add('mba'));
-  console.log(set.values());
-
-
-  console.log(set.remove('mba'));
-  console.log(set.remove('mba'));
-  console.log(set.values());
-
-  console.log(set.size());
+}
